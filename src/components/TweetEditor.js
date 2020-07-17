@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 
-const TweetEditor = () => {
+const TweetEditor = (props) => {
   const [gossip, setGossip] = useState('');
 
   const sendGossip = async () => {
-    const response = await axios.post('/api/tweets', {
-      message: gossip,
-    });
-    console.log(response.data);
+    props.sendGossip(gossip);
   };
 
   return (

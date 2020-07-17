@@ -68,12 +68,12 @@ export function makeServer() {
 
       this.post('/tweets', (schema, request) => {
         let attrs = JSON.parse(request.requestBody);
-        attrs.id = 4;
+        attrs.id = 5;
         attrs.username = 'angelitaooo';
         attrs.avatar =
           'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80';
         console.log(attrs);
-        return { tweets: attrs };
+        return schema.db.tweets.insert(attrs);
       });
     },
   });

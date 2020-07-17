@@ -1,18 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import TweetCard from './TweetCard';
 
-const TweetList = () => {
-  const [tweets, setTweets] = useState([]);
-  const getData = async () => {
-    const response = await axios.get('/api/tweets');
-    setTweets(response.data);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
+const TweetList = ({ tweets }) => {
   const renderTweets = () => {
     return tweets.map((tweet) => (
       <div key={tweet.id} className="border-b border-gray-200">
