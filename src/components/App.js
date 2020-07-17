@@ -12,7 +12,7 @@ const App = () => {
       <div className="flex flex-col w-0 flex-1 overflow-hidden">
         <main
           className="flex-1 relative z-0 overflow-y-auto focus:outline-none"
-          tabindex="0"
+          tabIndex="0"
         >
           <div className="pt-2 pb-6 md:py-6">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
