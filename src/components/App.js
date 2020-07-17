@@ -1,6 +1,7 @@
-import React from "react";
-import TweetList from "./TweetList";
-import SideBar from "./SideBar";
+import React from 'react';
+import TweetList from './TweetList';
+import SideBar from './SideBar';
+import TweetEditor from './TweetEditor';
 
 const App = () => {
   return (
@@ -18,6 +19,9 @@ const App = () => {
               <h1 className="text-2xl font-semibold text-gray-900">
                 Gossip Girl
               </h1>
+            </div>
+            <div className="px-8">
+              <TweetEditor></TweetEditor>
             </div>
             <TweetList></TweetList>
           </div>
