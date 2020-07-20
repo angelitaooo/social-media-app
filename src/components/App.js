@@ -1,6 +1,9 @@
 import React from 'react';
+import { Router, Route, Switch } from 'react-router-dom';
 import SideBar from './SideBar';
 import TimeLine from './TimeLine';
+import EditTweet from './EditTweet';
+import DeleteTweet from './DeleteTweet';
 
 const App = () => {
   return (
@@ -13,7 +16,17 @@ const App = () => {
           className="flex-1 relative z-0 overflow-y-auto focus:outline-none"
           tabIndex="0"
         >
-          <TimeLine></TimeLine>
+          <Switch>
+            <Route path="/" exact>
+              <TimeLine></TimeLine>
+            </Route>
+            <Route path="/tweets/edit/:tweetId">
+              <EditTweet></EditTweet>
+            </Route>
+            <Route path="/tweets/edit/:tweetId">
+              <DeleteTweet></DeleteTweet>
+            </Route>
+          </Switch>
         </main>
       </div>
     </div>

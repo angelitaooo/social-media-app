@@ -76,9 +76,18 @@ export function makeServer() {
         attrs.userId = 1;
         attrs.avatar =
           'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80';
-        console.log(attrs);
 
         return schema.db.tweets.insert(attrs);
+      });
+
+      this.put('/tweets/:tweetId', (schema, request) => {
+        let id = request.params.tweetId;
+        let attrs = JSON.parse(request.requestBody);
+
+        const tweetId = schema.db.tweets.find(id);
+        return schema.db.tweets.update(tweetId, attrs);
+
+        // return schema.tweets.find(id).update(attrs.message);
       });
     },
   });
