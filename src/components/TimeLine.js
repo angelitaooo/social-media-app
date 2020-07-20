@@ -14,7 +14,8 @@ const TimeLine = () => {
     const response = await axios.post('/api/tweets', {
       message: gossip,
     });
-    console.log(response.data);
+
+    getData();
   };
 
   useEffect(() => {

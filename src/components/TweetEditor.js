@@ -5,6 +5,7 @@ const TweetEditor = (props) => {
 
   const sendGossip = async () => {
     props.sendGossip(gossip);
+    setGossip('');
   };
 
   return (
@@ -26,6 +27,7 @@ const TweetEditor = (props) => {
           rows="4"
           className="form-textarea block w-full transition ease-in-out duration-150 sm:text-sm sm:leading-5"
           onChange={(e) => setGossip(e.target.value)}
+          value={gossip}
         ></textarea>
       </div>
       <div className="text-right sm:col-span-2 mt-4">
