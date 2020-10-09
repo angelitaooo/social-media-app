@@ -7,7 +7,8 @@ const TimeLine = () => {
   const [tweets, setTweets] = useState([]);
   const getData = async () => {
     const response = await axios.get('/api/tweets');
-    setTweets(response.data);
+    console.log(response.data);
+    setTweets(response.data.tweets);
   };
 
   const sendGossip = async (gossip) => {

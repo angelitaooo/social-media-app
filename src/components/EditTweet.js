@@ -17,7 +17,7 @@ const EditTweet = () => {
 
   return (
     <div className="px-8">
-      <h2 className="text-2xl pb-5">Edit Gossip</h2>
+      <h2 className="text-2xl pb-5">Edit GOSSIP</h2>
       <TweetEditor sendGossip={editTweet}></TweetEditor>
     </div>
   );
